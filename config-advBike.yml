@@ -55,7 +55,7 @@ graphhopper:
     #},
     # lookup track_type because some dirt-road tracks/roads don't have surface tag but DO have track_typed defined. track_type 2-5 suggest that it is a dirt/gravel-road
     {
-      "if": "surface != GRAVEL && surface !=UNPAVED && surface != FINE_GRAVEL && surface != COMPACTED && surface !=GROUND && surface !=DIRT && surface != GRASS && surface !=SAND && track_type!=GRADE2 && track_type!=GRADE3 && track_type!=GRADE4 && track_type!=GRADE5",
+      "if": "!(surface == GRAVEL || surface == UNPAVED || surface == FINE_GRAVEL || surface == COMPACTED || surface == GROUND || surface == DIRT || surface == GRASS || surface == SAND || track_type == GRADE2 || track_type == GRADE3 || track_type == GRADE4 || track_type == GRADE5)",
       #"if": "surface != GRAVEL && surface !=UNPAVED && surface != FINE_GRAVEL && surface != COMPACTED && surface !=GROUND && surface !=DIRT && surface != GRASS && surface !=SAND && road_class!= TRACK",
       "multiply_by": "0.01"
     },
